@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import SMOTE
 
 # 1. Récupération de la base de données
-chemin = r"C:\Cycle Ingénieur\1A\S6\GitHub\Pivot-Project_3-git\data\risk_factors_cervical_cancer.csv"
+chemin = r"C:\Users\User\OneDrive\school\Mon git\cervical+cancer+risk+factors"
 df = pd.read_csv(chemin, na_values=["?"])
 
 # Définition de la cible
