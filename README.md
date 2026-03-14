@@ -37,7 +37,7 @@ python src/train_model.py
 **3. Lancer l'application web :**
 
 ```bash
-streamlit run app/app.py
+python app/app.py
 
 ```
 
