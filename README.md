@@ -51,7 +51,7 @@ Le jeu de données initial présentait un déséquilibre majeur (~85% de cas "Sa
 **Impact :** Cela a permis de générer des exemples synthétiques pour la classe minoritaire, évitant au modèle de toujours prédire la classe majoritaire et améliorant considérablement sa sensibilité pour la détection des cas à risque.
 
 
-### Quel modèle de Machine Learning a obtenu les meilleures performances ?
+### Perfomance des modèles
 
 Parmi les modèles testés, le modèle CatBoost classifier a démontré les meilleures performances sur notre ensemble de test.
 
