@@ -158,7 +158,7 @@ class TestPretraitement:
     def test_imputer_meme_nombre_features(self):
         """L'imputer doit avoir autant de statistics que de colonnes imputées."""
         assert len(imputer.statistics_) >= X_train_imputed.shape[1]
-            "Le nombre de médianes de l'imputer ne correspond pas au nombre de colonnes"
+        "Le nombre de médianes de l'imputer ne correspond pas au nombre de colonnes"
 
 
 # =============================================================================
@@ -250,7 +250,6 @@ class TestPerformance:
         from sklearn.metrics import recall_score
         rec = recall_score(y_test, model.predict(X_test_final), zero_division=0)
         assert rec >= 0.40, \
-        #assert rec >= 0.60, \
             f"Recall trop faible : {rec:.2%} — risque de faux négatifs élevé"
 
     def test_precision_minimum_classe_positive(self, model):
