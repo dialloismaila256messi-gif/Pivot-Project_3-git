@@ -8,7 +8,7 @@ Ce projet est réalisé dans le cadre de la Coding Week. Il s'agit d'un outil d'
 **Équipe :** Bakayoko Mouhamed Soualiou
 Diallo Ismaila
 Gbatta Jovite Jean-Paul
-Mounirou Kouadio Kobenan Habib
+Mounirou Kouadio Kobenan Habib (Mounirou-H-ops)
 Ouattara El Hadj Sinali
 
 **Objectifs du projet :**
