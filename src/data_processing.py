@@ -9,13 +9,11 @@ from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import SMOTE
 import matplotlib.pyplot as plt
 import seaborn as sns
-import joblib
+  
 
-# 1. Récupération de la base de données
-dossier_src    = os.path.dirname(os.path.abspath(__file__))
-dossier_racine = os.path.dirname(dossier_src)
-chemin         = os.path.join(dossier_racine, 'data', 'risk_factors_cervical_cancer.csv')
-df = pd.read_csv(chemin, na_values=["?"])
+# 1. Récupération de la base de données via l'URL
+url = "https://archive.ics.uci.edu/ml/machine-learning-databases/00383/risk_factors_cervical_cancer.csv"
+df = pd.read_csv(url, na_values=["?"])
 
 # Définition de la cible
 X = df.drop('Biopsy', axis=1)
@@ -84,12 +82,11 @@ X_test_final = pd.DataFrame(scaler.transform(X_test_imputed), columns=X_test_imp
 # --- AJOUT DES VISUALISATIONS (SAUVEGARDE EN PNG) ---
 import os
 
-# Création d'un dossier dynamique "images" à la racine de ton projet
+# Définition du chemin vers le dossier "images" existant à la racine
 # __file__ pointe sur src/data_processing.py, donc on remonte d'un cran
 dossier_actuel = os.path.dirname(os.path.abspath(__file__))
 dossier_racine = os.path.dirname(dossier_actuel)
 dossier_images = os.path.join(dossier_racine, "images")
-os.makedirs(dossier_images, exist_ok=True)
 
 # 10. Visualisation des proportions de classes (Avant / Après SMOTE)
 fig, axes = plt.subplots(1, 2, figsize=(12, 5))
@@ -104,7 +101,7 @@ axes[1].set_title("Proportion des classes APRÈS SMOTE")
 
 plt.tight_layout()
 
-# Sauvegarde au lieu de l'affichage
+# Sauvegarde directe dans le dossier images
 chemin_pie = os.path.join(dossier_images, "proportion_classes_smote.png")
 plt.savefig(chemin_pie, bbox_inches='tight', dpi=300)
 plt.close() # Libère la mémoire
@@ -116,7 +113,7 @@ plt.figure(figsize=(12, 10))
 sns.heatmap(X_train_imputed.corr(), annot=False, cmap='coolwarm', linewidths=0.5)
 plt.title("Matrice de corrélation des caractéristiques")
 
-# Sauvegarde au lieu de l'affichage
+# Sauvegarde directe dans le dossier images
 chemin_heatmap = os.path.join(dossier_images, "matrice_correlation.png")
 plt.savefig(chemin_heatmap, bbox_inches='tight', dpi=300)
 plt.close() # Libère la mémoire
