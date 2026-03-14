@@ -52,20 +52,56 @@ Le jeu de données initial présentait un déséquilibre majeur (~85% de cas "Sa
 
 
 ### Perfomance des modèles
-
-Parmi les modèles testés, le modèle CatBoost classifier a démontré les meilleures performances sur notre ensemble de test.
-
-* Précision (Accuracy) : 96%
+### Modèle CatBoost Classifier
+#### Performances
+* Accuracy : 96%
+* Précision :
 * Rappel (Recall) pour la classe À risque : 64%
 * F1-Score  Pour la classe risque: 67%
-
-### Quelles caractéristiques médicales ont le plus influencé les prédictions (Résultats SHAP) ?
+* ROC-AUC : 
+#### Quelles caractéristiques médicales ont le plus influencé les prédictions (Résultats SHAP) ?
 
 L'utilisation de `TreeExplainer` de SHAP a révélé que les facteurs suivants ont le plus fort impact sur la probabilité de risque :
 
 1. L'âge
 2. Le nombre de grossesses (Num of pregnancies)
 3.  Le temps de tabagisme (Smokes (years))
+
+
+### Modèle XGBoost Classifier
+#### Performances
+* Accuracy : 96%
+* Précision :
+* Rappel (Recall) pour la classe À risque : 64%
+* F1-Score  Pour la classe risque: 67%
+* ROC-AUC : 
+#### Quelles caractéristiques médicales ont le plus influencé les prédictions (Résultats SHAP) ?
+
+L'utilisation de `TreeExplainer` de SHAP a révélé que les facteurs suivants ont le plus fort impact sur la probabilité de risque :
+
+1. L'âge
+2. Le nombre de grossesses (Num of pregnancies)
+3.  Le temps de tabagisme (Smokes (years))
+
+
+### Modèle Random Forest Classifier
+#### Performances
+* Accuracy : 96%
+* Précision :
+* Rappel (Recall) pour la classe À risque : 64%
+* F1-Score  Pour la classe risque: 67%
+* ROC-AUC : 
+#### Quelles caractéristiques médicales ont le plus influencé les prédictions (Résultats SHAP) ?
+
+L'utilisation de `TreeExplainer` de SHAP a révélé que les facteurs suivants ont le plus fort impact sur la probabilité de risque :
+
+1. L'âge
+2. Le nombre de grossesses (Num of pregnancies)
+3.  Le temps de tabagisme (Smokes (years))
+
+
+
+Parmi les modèles testés, le modèle CatBoost classifier a démontré les meilleures performances sur notre ensemble de test.
 
 ### XGBOOST CLASSIFIER 
 * précision : **57.14%**
