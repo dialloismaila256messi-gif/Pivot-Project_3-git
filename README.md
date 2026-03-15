@@ -82,6 +82,8 @@ python app/app.py
 ```bash
 http://127.0.0.1:5000/
 
+```
+
 ## 🔍 Exploration des données
 L'exploration des données nous a permis de détecter la présence de valeurs manquantes et de valeurs aberrantes dans la base de donnée, ainsi que d'un déséquilibre de la base.
 
