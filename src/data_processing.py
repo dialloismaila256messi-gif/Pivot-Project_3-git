@@ -9,6 +9,7 @@ from sklearn.preprocessing import StandardScaler
 from imblearn.over_sampling import SMOTE
 import matplotlib.pyplot as plt
 import seaborn as sns
+import joblib
   
 
 # 1. Récupération de la base de données via l'URL
@@ -113,18 +114,16 @@ plt.figure(figsize=(12, 10))
 sns.heatmap(X_train_imputed.corr(), annot=False, cmap='coolwarm', linewidths=0.5)
 plt.title("Matrice de corrélation des caractéristiques")
 
-# Sauvegarde directe dans le dossier images
+#  Sauvegarde directe dans le dossier images
 chemin_heatmap = os.path.join(dossier_images, "matrice_correlation.png")
 plt.savefig(chemin_heatmap, bbox_inches='tight', dpi=300)
 plt.close() # Libère la mémoire
 print(f"Graphique de corrélation sauvegardé ici : {chemin_heatmap}")
 
-# À la fin de data_processing.py, ajoutez :
-
-# Sauvegarder le scaler
+# 12. Sauvegarder le scaler
 joblib.dump(scaler, '../modele_scaler.pkl')
 
-# Sauvegarder la liste des colonnes retenues après filtrage
+# 13. Sauvegarder la liste des colonnes retenues après filtrage
 joblib.dump(list(X_train_imputed.columns), '../modele_colonnes.pkl')
 
 print("✅ Scaler et colonnes sauvegardés !")
